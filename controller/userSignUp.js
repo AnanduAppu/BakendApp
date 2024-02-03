@@ -6,7 +6,7 @@ const { tryCatch } = require("../middleWares/trycatchHandler");
 exports.userRgistration = tryCatch(async function (req,res){
         const {Name,email,password} = req.body
     
-                console.log(req.body);
+        console.log(req.body);
         const existinguser = await userModel.findOne({email:email});
         console.log(existinguser);
         if (existinguser) {
